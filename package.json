@@ -1,0 +1,57 @@
+{
+  "name": "prompt-optimizer",
+  "version": "1.0.0",
+  "description": "CLI tool to optimize prompts using Claude Code skills, agents & commands",
+  "type": "module",
+  "main": "dist/optimize-prompt.js",
+  "bin": {
+    "prompt-optimizer": "dist/cli.js",
+    "po": "dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "skills/",
+    "agents/",
+    "commands/",
+    "rules/",
+    "settings.json",
+    "registry.json",
+    "CLAUDE.md",
+    "prompt-optimizer.sh"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:registry": "node dist/build-registry.js",
+    "optimize": "node dist/optimize-prompt.js",
+    "setup": "npm run build && npm run build:registry",
+    "postinstall": "npm run setup 2>/dev/null || true",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manufarbkontrast/my-claude-setup.git"
+  },
+  "keywords": [
+    "claude",
+    "prompt",
+    "optimizer",
+    "cli",
+    "ai"
+  ],
+  "author": "manufarbkontrast",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manufarbkontrast/my-claude-setup/issues"
+  },
+  "homepage": "https://github.com/manufarbkontrast/my-claude-setup#readme",
+  "dependencies": {
+    "fuse.js": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "typescript": "^5.9.3"
+  }
+}
